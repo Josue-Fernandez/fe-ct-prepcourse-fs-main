@@ -22,22 +22,26 @@ function incrementarPorUno(array) {
    // El arreglo recibido por parámetro contiene números.
    // Retornar un arreglo con los elementos incrementados en +1.
  
-   var masUno = array.map((num)=>{
+   var masUno = array.map((num)=>
+   
+   {
       return (num+1);
    });
 
    return masUno;
-      
-   
+
+
+
 }
 
 function agregarItemAlFinalDelArray(array, elemento) {
    // Agrega el "elemento" al final del arreglo recibido.
+
    // Retorna el arreglo.
-  
+
   array.push(elemento);
   return array;
-  
+
 }
 
 function agregarItemAlComienzoDelArray(array, elemento) {
@@ -54,40 +58,64 @@ function dePalabrasAFrase(palabras) {
    // con un espacio entre cada palabra.
    // Ejemplo: ['Hello', 'world!'] -> 'Hello world!'.
    
-   
+   var oracion = palabras.join(' ');
+   return oracion;
 
 }
 
 function arrayContiene(array, elemento) {
    // Verifica si el elemento existe dentro del arreglo recibido.
    // Retornar true si está, o false si no está.
-   // Tu código:
+   
+   var verify = array.includes(elemento);
+  if (verify===true){
+   return true
+}else{
+   return false
 }
+
+}
+
 
 function agregarNumeros(arrayOfNums) {
    // El parámetro "arrayOfNums" debe ser un arreglo de números.
    // Suma todos los elementos y retorna el resultado.
-   // Tu código:
-}
+   res=0
+
+   for(i=0; i<arrayOfNums.length; i++){
+      res= res+arrayOfNums[i];
+   }return res
+
+   }
 
 function promedioResultadosTest(resultadosTest) {
    // El parámetro "resultadosTest" es un arreglo de números.
    // Itera (en un bucle) los elementos del arreglo y devuelve el promedio de las notas.
-   // Tu código:
+   prom=0
+   for(i=0; i<resultadosTest.length; i++){
+      prom=prom+resultadosTest[i];
+   }return prom/resultadosTest.length;
+
 }
 
 function numeroMasGrande(arrayOfNums) {
    // El parámetro "arrayOfNums" es un arreglo de números.
    // Retornar el número más grande.
-   // Tu código:
+
+   return Math.max(...arrayOfNums);
+  
 }
 
 function multiplicarArgumentos() {
    // Usa la palabra clave `arguments` para multiplicar todos los argumentos y devolver el producto.
    // Si no se pasan argumentos retorna 0. Si se pasa un argumento, simplemente retórnalo.
    // [PISTA]: "arguments" es un arreglo.
-   // Tu código:
+   
+
+
 }
+
+
 
 function cuentoElementos(array) {
    // Desarrolla una función que retorne la cantidad de elementos del arreglo cuyo valor sea mayor que 18.
