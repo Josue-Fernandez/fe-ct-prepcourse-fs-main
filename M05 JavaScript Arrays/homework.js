@@ -2,13 +2,17 @@
 
 function devolverPrimerElemento(array) {
    // Retornar el primer elemento del arreglo recibido por parámetro.
-   return array[0];
+   var primero = array.shift();
+   return primero;
 }
 
 function devolverUltimoElemento(array) {
    // Retornar el último elemento del arreglo recibido por parámetro.
 
-   return array[array.length -1];
+   //return array[array.length -1];
+
+   var ultimo = array.pop();
+   return ultimo;
 
 }
 
@@ -107,19 +111,33 @@ function numeroMasGrande(arrayOfNums) {
 }
 
 function multiplicarArgumentos() {
-   // Usa la palabra clave `arguments` para multiplicar todos los argumentos y devolver el producto.
-   // Si no se pasan argumentos retorna 0. Si se pasa un argumento, simplemente retórnalo.
-   // [PISTA]: "arguments" es un arreglo.
+   // Usa la palabra clave `arguments` para multiplicar todos los argumentos y devolver el producto
+   // Si no se pasan argumentos devuelve 0. Si se pasa un argumento, simplemente devuélvelo
+   // Escribe tu código aquí:
    
+   if(arguments.length===0) return 0;
+   if(arguments.length===1) return arguments[0];
+   var res = 1;
+   for(i=0; i<arguments.length; i++){
+      if(arguments.length>1){
+         res = res*arguments[i];
+      }
+   }return res;
 
-
-}
-
-
+   }
 
 function cuentoElementos(array) {
    // Desarrolla una función que retorne la cantidad de elementos del arreglo cuyo valor sea mayor que 18.
    // Tu código:
+
+   var array2 = [];
+
+for(i=0; i<array.length; i++){
+   if(array[i]>18){
+      array2.push(array[i]);
+   }
+} return array2.length;
+
 }
 
 function diaDeLaSemana(numeroDeDia) {
@@ -127,18 +145,49 @@ function diaDeLaSemana(numeroDeDia) {
    // Realiza una función que, dado el número del día de la semana, retorne: "Es fin de semana"
    // si el día corresponde a "Sábado" o "Domingo", y "Es dia laboral" en caso contrario.
    // Tu código:
+
+  
+
+   if(numeroDeDia>1&&numeroDeDia<7){
+      return "Es dia laboral";
+   }
+   else if(numeroDeDia===7||numeroDeDia===1){
+      return "Es fin de semana";
+   }
+
 }
 
 function empiezaConNueve(num) {
    // Esta función recibe por parámetro un número.
    // Debe retornar true si el entero inicia con 9 y false en otro caso.
    // Tu código:
+
+   // Convertimos a "num" en String y lo dividimos en elementos de un arreglo.
+  const resp = num.toString().split('');
+  // Recorremos el arreglo y filtramos si hay un "9" en la posición 0.
+  const newResp = resp.filter(iterator => iterator[0] === '9');
+
+ // Si encuentra el "9" en la posición 0, retornará "true".
+  if (newResp[0] === '9') {
+    return true;
+  } else {
+    return false;
+  }
 }
 
 function todosIguales(array) {
    // Si todos los elementos del arreglo son iguales, retornar true.
    // Caso contrario retornar false.
    // Tu código:
+
+   for(i=0; i<array.length; i++){
+      if(array[i]===array[i+1]){
+         return true
+      }else{
+         return false
+      }
+   }
+
 }
 
 function mesesDelAño(array) {
