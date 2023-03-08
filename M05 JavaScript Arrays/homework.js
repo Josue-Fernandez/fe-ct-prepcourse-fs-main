@@ -198,14 +198,22 @@ function mesesDelAño(array) {
  
 
    const nuevoarray =[];
+   var msj = 'No se encontraron los meses pedidos'
 
-      for(i=0; i<array.length; i++){
-      if(array[i]==='Enero'||array[i]==='Marzo'||array[i]==='Noviembre'){
-        nuevoarray.push(array[i]);
-      }else{
-         return "No se encontraron los meses pedidos"
+
+
+   array.forEach(element => {
+      if(element ==='Enero' || element ==='Marzo'|| element ==='Noviembre'){
+         nuevoarray.push(element);
       }
-   }return nuevoarray
+
+   });
+   
+   if(nuevoarray.length<3){
+      return msj
+   }
+   return nuevoarray
+ 
    
 }
 
@@ -213,12 +221,31 @@ function tablaDelSeis() {
    // Escribe una función que muestre la tabla de multiplicar del 6 (del 0 al 60).
    // La función devuelve un arreglo con los resultados de la tabla de multiplicar del 6 en orden creciente.
    // Tu código:
+   
+   const nuevo = [];
+   var digito = 6;
+   for(i=0; i<=10; i++){
+      
+         nuevo.push(digito*[i]);
+   }return nuevo
+
 }
 
 function mayorACien(array) {
    // La función recibe un arreglo con enteros entre 0 y 200.
    // Recorrerlo y retornar un arreglo con todos los valores mayores a 100 (no incluye el 100).
    // Tu código:
+
+   const resultado = [];
+
+   for(i=0; i<array.length; i++){
+      if(array[i]>100){
+         resultado.push(array[i]);
+      }
+   }return resultado
+
+
+
 }
 
 /* ----------------------------------------------------------------------------------
@@ -232,6 +259,13 @@ function breakStatement(num) {
    // la ejecución y retornar el string: "Se interrumpió la ejecución".
    // [PISTA]: utiliza el statement 'break'.
    // Tu código:
+
+   const arreglonuevo =[];
+
+   for(i=0; i=num.length; i+2;){
+      
+   }
+
 }
 
 function continueStatement(num) {
